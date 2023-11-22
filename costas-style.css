@@ -19,6 +19,11 @@ body {
     color: #333;
 }
 
+.screenshot {
+    margin-top: 15px; /* Adjust the space as needed */
+    /* existing styles... */
+}
+
 .container {
     display: flex;
     align-items: center;
