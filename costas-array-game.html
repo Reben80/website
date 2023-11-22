@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Costas Array Game</title>
+    <link rel="stylesheet" type="text/css" href="costas-style.css">
+</head>
+<body>
+
+<div id="title">Costas Array Game</div>
+
+<div class="container">
+    <div class="slider-container">
+        <label for="sizeSlider">Grid Size: <span id="gridSizeLabel">5</span></label>
+        <input type="range" id="sizeSlider" min="3" max="10" value="5" onchange="updateGridSize()" orient="vertical">
+    </div>
+    <div id="grid"></div>
+</div>
+
+<div class="bottom-container">
+    <div id="score">Score: <span id="scoreValue">0</span></div>
+    <button onclick="resetGame()">Reset</button>
+</div>
+
+<script src="costas-script.js"></script>
+</body>
+</html>

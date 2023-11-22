@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(5, 60px);
+    grid-gap: 5px;
+}
+
+.cell {
+    background: #ddd;
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+}
+
+.cell.active {
+    background: blue;
+}
+
+.cell.error {
+    background: red;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#sizeSlider {
+    -webkit-appearance: slider-vertical;
+    writing-mode: bt-lr;
+    width: 8px;
+    height: 200px;
+    margin: 15px 0;
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+#score, .slider-container label, button {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
