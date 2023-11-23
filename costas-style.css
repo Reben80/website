@@ -60,9 +60,18 @@ body {
 #sizeSlider {
     -webkit-appearance: slider-vertical;
     writing-mode: bt-lr;
-    width: 8px;
+    width: 8px; /* Increase this width for better mobile interaction */
     height: 200px;
     margin: 15px 0;
+}
+
+/* Media query for devices with a max-width of 768px */
+@media screen and (max-width: 768px) {
+    #sizeSlider {
+        width: 20px; /* Increased width for mobile devices */
+        height: 150px; /* Optional: Adjust height if needed */
+        margin: 10px 0; /* Optional: Adjust margin if needed */
+    }
 }
 
 .bottom-container {
