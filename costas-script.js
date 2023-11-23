@@ -79,7 +79,7 @@ function calculateVector(dot1, dot2) {
 }
 
 function updateGridSize() {
-    gridSize = document.getElementById('sizeSlider').value;
+    gridSize = document.getElementById('gridSizeSelect').value;
     resetGame();
 }
 
