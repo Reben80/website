@@ -80,6 +80,7 @@ function calculateVector(dot1, dot2) {
 
 function updateGridSize() {
     gridSize = document.getElementById('gridSizeSelect').value;
+
     resetGame();
 }
 
@@ -103,4 +104,25 @@ function updateScoreDisplay() {
 }
 
 createGrid();
+
+updateGridSizeLabel();
+
+// New function for adjusting the slider for mobile
+function adjustSliderForMobile() {
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    var slider = document.getElementById('sizeSlider');
+
+    if (isMobile) {
+        slider.style.width = '20px'; // Increase the width for mobile devices
+    } else {
+        slider.style.width = '8px'; // Set back to default for non-mobile devices
+    }
+}
+
+// Call the function to adjust the slider
+adjustSliderForMobile();
+
+// Adjust the slider if the window is resized
+window.addEventListener('resize', adjustSliderForMobile);
+
 updateGridSizeLabel();
