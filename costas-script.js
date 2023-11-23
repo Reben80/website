@@ -80,7 +80,6 @@ function calculateVector(dot1, dot2) {
 
 function updateGridSize() {
     gridSize = document.getElementById('gridSizeSelect').value;
-
     resetGame();
 }
 
@@ -103,26 +102,16 @@ function updateScoreDisplay() {
     document.getElementById('scoreValue').textContent = score;
 }
 
-createGrid();
-
-updateGridSizeLabel();
-
-// New function for adjusting the slider for mobile
-function adjustSliderForMobile() {
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    var slider = document.getElementById('sizeSlider');
-
-    if (isMobile) {
-        slider.style.width = '20px'; // Increase the width for mobile devices
+// Function to toggle the game description
+document.getElementById('descriptionButton').addEventListener('click', function() {
+    var description = document.getElementById('description');
+    if (description.style.display === 'none') {
+        description.style.display = 'block';
     } else {
-        slider.style.width = '8px'; // Set back to default for non-mobile devices
+        description.style.display = 'none';
     }
-}
+});
 
-// Call the function to adjust the slider
-adjustSliderForMobile();
-
-// Adjust the slider if the window is resized
-window.addEventListener('resize', adjustSliderForMobile);
-
+// Initial setup calls
+createGrid();
 updateGridSizeLabel();
