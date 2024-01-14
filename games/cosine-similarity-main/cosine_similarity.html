@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vector Similarity Game</title>
+    <link rel="stylesheet" href="cosine_similarity_style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="controls">
+            <button id="newGame">New Game</button>
+            <button id="submitGuess" disabled>Submit Guess</button>
+            <input type="number" id="guessInput" min="-1" max="1" step="0.01" placeholder="Enter guess (-1 to 1)">
+            <button id="nextRound" style="display: none;">Next Round</button>
+            <button id="instructionsBtn"><a href="instructions.html">Instructions</a></button>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="scoreboard">
+            <p>Round: <span id="round">1</span> / 5</p>
+            <p>Current Score: <span id="currentScore">0</span></p>
+            <p>Total Score: <span id="totalScore">0</span></p>
+        </div>
+    </div>
+    <script src="cosine_similarity.js"></script>
+</body>
+</html>

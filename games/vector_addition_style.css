@@ -1,0 +1,58 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+#game-container {
+    width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+}
+
+#controls {
+    margin-bottom: 15px;
+}
+
+button, input[type="number"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type:"number"]:hover {
+    background-color: #0056b3;
+}
+
+#scoreboard {
+    margin-top: 15px;
+}
+
+/* Adjusting list items */
+ol {
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+ol li {
+    margin-left: 20px; /* Adjusting the margin for proper alignment */
+}

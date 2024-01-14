@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vector Addition Game</title>
+    <link rel="stylesheet" href="vector_addition_style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="controls">
+            <button id="newGame">New Game</button>
+            <button id="nextRound" style="display: none;">Next Round</button>
+            <button id="instructionsBtn"><a href="vectorAdditionInstructions.html">Instructions</a></button>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="scoreboard">
+            <p>Attempts: <span id="attempts">0</span> / 5</p>
+            <p>Distance: <span id="distance">0</span></p>
+        </div>
+        <table id="scoreTable" style="display: none;"></table>
+    </div>
+    <script src="vector_addition_script.js"></script>
+</body>
+</html>
