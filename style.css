@@ -1,136 +1,53 @@
-/* Base styles */
-
-/* Flexible grid layout */
-.content-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap onto the next line on small screens */
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.text-panel, .image-panel {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px; /* Increased padding */
-    flex: 1;
-}
-
-.text-panel {
-    margin-right: 20px; /* Add space between the text panel and the image panel */
-    font-size: 1.4em; /* Responsive font size */
-    line-height: 1.6;
-}
-
-.image-panel {
-    /* Center the image within the panel */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile-image {
-    max-width: 100%; /* Image can fill the entire width of the image panel */
-    height: auto;
-    border-radius: 5px;
-}
-
-/* Styles for the header */
-header {
-    background-color: #2E3D48; /* A softer dark blue */
-    color: white;
-    padding: 0.5em 0;
-    border-radius: 5px; /* Soft rounded corners */
-}
-
-header nav ul {
-    list-style: none;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-    position: relative; /* Position relative for absolute positioning of dropdown */
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 12px 16px; /* Add padding for larger clickable area */
-}
-
-header nav ul li a:hover, header nav ul li:hover > a {
-    color: #FFD700; /* A gold color for hover */
-    text-decoration: none;
-}
-
-/* Dropdown Styles */
-header nav ul li.dropdown {
-    position: relative;
-}
-
-header nav .dropdown-content {
-    display: none;
-    position: absolute;
-    left: 0; /* Align to the left edge of the parent list item */
-    top: 100%; /* Position directly below the parent list item */
-    background-color: black; /* Black background for dropdown */
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 5px;
-}
-
-header nav .dropdown-content a {
-    color: white; /* White text color for dropdown links */
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-header nav ul li:hover .dropdown-content {
-    display: block;
-}
-
-header nav .dropdown-content a:hover {
-    background-color: #FFD700; /* Yellow background on hover */
-    color: black; /* Change text color on hover */
-}
-
-/* Body and main container styles */
 body {
-    font-family: Arial, sans-serif; /* Consistent font throughout the site */
-    color: #333333; /* A dark grey for text */
-    background-color: #f4f4f4; /* A light grey background */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 20px;
+    background: #f5f5f5;
+    background: linear-gradient(135deg, #f5f5f5 30%, #e8e8e8 100%);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-/* Media Queries */
-@media (max-width: 1000px) {
-    header nav ul li {
-        display: block;
-        margin: 5px 0; /* Stack the menu items */
-    }
+h2, label, button, #result {
+    margin: 10px;
+    padding: 5px;
+}
 
-    .content-container {
-        flex-direction: column; /* Stack the flex items */
-    }
+canvas {
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px #aaa;
+    background-color: #3e95716e; /* Adds a light grey background to the canvas */
+}
 
-    .text-panel, .image-panel {
-        /* Full width on small screens, with adjusted padding for indentation */
-        width: 100%;
-        padding: 20px;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
+button {
+    background-color: #d90cfd;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-    .text-panel {
-        /* Larger text for readability on small screens */
-        font-size: 1.2em;
-    }
+button:hover {
+    background-color: hsla(256, 100%, 35%, 0.934);
+}
 
-    header nav .dropdown-content {
-        position: static; /* Dropdowns should also be full-width and static positioned */
-    }
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+label {
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
 }
