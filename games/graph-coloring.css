@@ -151,3 +151,24 @@ canvas {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
+
+@media (max-width: 768px) {
+    #game-container {
+        padding: 10px;
+    }
+    #controls {
+        flex-direction: column;
+    }
+    #controls label, #controls input, #controls button, #controls select {
+        margin: 5px 0;
+        width: 100%;
+    }
+    .color-option {
+        width: 40px;
+        height: 40px;
+    }
+    #resetButton, #howToPlayBtn, #checkMinColorsBtn, #challengeSelect {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}
