@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Coloring Game</title>
+    <link rel="stylesheet" href="graph-coloring.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="controls-container">
+            <div id="controls">
+                <label for="numVertices">Number of vertices:</label>
+                <input type="number" id="numVertices" min="5" max="15" value="5">
+                <button id="resetButton">Reset</button>
+                <select id="challengeSelect">
+                    <option value="-1">Random Graph</option>
+                    <!-- Options will be added dynamically -->
+                </select>
+                <button id="howToPlayBtn">How to Play</button>
+                <button id="checkMinColorsBtn">Check Minimum Colors</button>
+            </div>
+        </div>
+        <div id="colorCounter">Colors used: <span id="colorCount">0</span></div>
+        <canvas id="gameCanvas" width="600" height="400"></canvas>
+        <div id="colorPalette"></div>
+        <div id="howToPlay" class="hidden">
+            <h2>How to Play:</h2>
+            <ol>
+                <li>Select a color from the palette below the graph.</li>
+                <li>Click on a vertex to color it.</li>
+                <li>Adjacent vertices cannot have the same color.</li>
+                <li>Try to color the entire graph using as few colors as possible.</li>
+                <li>Use the "Reset" button to start over or generate a new random graph.</li>
+                <li>Select a specific challenge from the dropdown menu to try different graph structures.</li>
+            </ol>
+        </div>
+    </div>
+    <script src="graph-coloring.js"></script>
+</body>
+</html>
