@@ -8,6 +8,7 @@ const howToPlayBtn = document.getElementById('howToPlayBtn');
 const howToPlay = document.getElementById('howToPlay');
 const challengeSelect = document.getElementById('challengeSelect');
 const checkMinColorsBtn = document.getElementById('checkMinColorsBtn');
+const numVerticesInput = document.getElementById('numVertices');
 
 console.log('Canvas dimensions:', canvas.width, 'x', canvas.height);
 
@@ -19,15 +20,7 @@ let selectedColor = null;
 const colors = ['#FFA726', '#66BB6A', '#42A5F5', '#AB47BC', '#EC407A', '#8D6E63'];
 
 const challenges = [
-    {
-        vertices: [
-            {x: 300, y: 50}, {x: 450, y: 150}, {x: 400, y: 350},
-            {x: 200, y: 350}, {x: 150, y: 150}, {x: 300, y: 100},
-            {x: 375, y: 175}, {x: 350, y: 275}, {x: 250, y: 275},
-            {x: 225, y: 175}
-        ],
-        edges: [[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,6],[2,7],[3,8],[4,9],[5,7],[7,9],[9,6],[6,8],[8,5]]
-    },
+    // Challenge 1: Small, Simple Graph (5 vertices)
     {
         vertices: [
             {x: 300, y: 100}, {x: 450, y: 200}, {x: 400, y: 350},
@@ -35,29 +28,15 @@ const challenges = [
         ],
         edges: [[0,1],[0,2],[0,3],[0,4],[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
     },
-    {
-        vertices: [
-            {x: 200, y: 100}, {x: 400, y: 100}, {x: 200, y: 300}, {x: 400, y: 300},
-            {x: 250, y: 150}, {x: 450, y: 150}, {x: 250, y: 350}, {x: 450, y: 350}
-        ],
-        edges: [[0,1],[0,2],[0,4],[1,3],[1,5],[2,3],[2,6],[3,7],[4,5],[4,6],[5,7],[6,7]]
-    },
-    {
-        vertices: Array(20).fill().map((_, i) => ({
-            x: 300 + 200 * Math.cos(2 * Math.PI * i / 20),
-            y: 200 + 200 * Math.sin(2 * Math.PI * i / 20)
-        })),
-        edges: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11],[11,12],[12,13],[13,14],[14,15],[15,16],[16,17],[17,18],[18,19],[19,0],[0,5],[1,6],[2,7],[3,8],[4,9],[10,15],[11,16],[12,17],[13,18],[14,19]]
-    },
+    // Challenge 2: Pentagon with Inner Star (6 vertices)
     {
         vertices: [
             {x: 300, y: 50}, {x: 450, y: 150}, {x: 400, y: 350},
-            {x: 200, y: 350}, {x: 150, y: 150}, {x: 300, y: 100},
-            {x: 375, y: 175}, {x: 350, y: 275}, {x: 250, y: 275},
-            {x: 225, y: 175}
+            {x: 200, y: 350}, {x: 150, y: 150}, {x: 300, y: 200}
         ],
-        edges: [[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,6],[2,7],[3,8],[4,9],[5,7],[7,9],[9,6],[6,8],[8,5]]
+        edges: [[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,5],[2,5],[3,5],[4,5]]
     },
+    // Challenge 3: Hexagonal Graph with Additional Edges (6 vertices)
     {
         vertices: [
             {x: 200, y: 200}, {x: 400, y: 200},
@@ -66,24 +45,55 @@ const challenges = [
         ],
         edges: [[0,1],[0,2],[0,3],[0,4],[0,5],[1,2],[1,3],[1,4],[1,5],[2,3],[2,4],[2,5],[3,4],[3,5],[4,5]]
     },
-    {
-        vertices: [
-            {x: 300, y: 50}, {x: 450, y: 150}, {x: 400, y: 350},
-            {x: 200, y: 350}, {x: 150, y: 150}, {x: 300, y: 200}
-        ],
-        edges: [[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,5],[2,5],[3,5],[4,5]]
-    },
+    // Challenge 4: Small Triangle-Based Graph (5 vertices)
     {
         vertices: [
             {x: 200, y: 100}, {x: 400, y: 100},
             {x: 100, y: 300}, {x: 300, y: 300}, {x: 500, y: 300}
         ],
         edges: [[0,1],[0,2],[0,3],[1,3],[1,4],[2,3],[3,4]]
+    },
+    // Challenge 5: Medium Graph with Overlapping Edges (8 vertices)
+    {
+        vertices: [
+            {x: 200, y: 100}, {x: 400, y: 100}, {x: 200, y: 300}, {x: 400, y: 300},
+            {x: 250, y: 150}, {x: 450, y: 150}, {x: 250, y: 350}, {x: 450, y: 350}
+        ],
+        edges: [[0,1],[0,2],[0,4],[1,3],[1,5],[2,3],[2,6],[3,7],[4,5],[4,6],[5,7],[6,7]]
+    },
+    // Challenge 6: Large, Complex Graph (10 vertices with cross-connections)
+    {
+        vertices: [
+            {x: 300, y: 50}, {x: 450, y: 150}, {x: 400, y: 350},
+            {x: 200, y: 350}, {x: 150, y: 150}, {x: 300, y: 100},
+            {x: 375, y: 175}, {x: 350, y: 275}, {x: 250, y: 275}, {x: 225, y: 175}
+        ],
+        edges: [[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,6],[2,7],[3,8],[4,9],[5,7],[7,9],[9,6],[6,8],[8,5]]
+    },
+    // Challenge 7: Circular Graph with 20 vertices and additional cross-connections
+    {
+        vertices: Array(20).fill().map((_, i) => ({
+            x: 300 + 200 * Math.cos(2 * Math.PI * i / 20),
+            y: 200 + 200 * Math.sin(2 * Math.PI * i / 20)
+        })),
+        edges: [
+            [0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],
+            [10,11],[11,12],[12,13],[13,14],[14,15],[15,16],[16,17],[17,18],[18,19],[19,0],
+            [0,5],[1,6],[2,7],[3,8],[4,9],[10,15],[11,16],[12,17],[13,18],[14,19]
+        ]
     }
 ];
 
-function generateRandomGraph() {
-    const numVertices = Math.floor(Math.random() * 6) + 5; // Random number between 5 and 10
+
+// Event listener for number of vertices input
+numVerticesInput.addEventListener('input', () => {
+    const numVertices = parseInt(numVerticesInput.value, 10);
+    generateRandomGraph(numVertices);
+    drawGraph();
+    updateColorCount();
+});
+
+function generateRandomGraph(numVertices) {
     vertices = [];
     edges = [];
 
@@ -216,7 +226,7 @@ function updateColorCount() {
 
 function loadChallenge(index) {
     if (index === -1) {
-        generateRandomGraph();
+        generateRandomGraph(parseInt(numVerticesInput.value, 10));
     } else {
         const challenge = challenges[index];
         vertices = challenge.vertices.map(v => ({...v, color: null, adjacentVertices: []}));
@@ -276,7 +286,7 @@ canvas.addEventListener('mouseup', () => {
 
 resetButton.addEventListener('click', () => {
     if (challengeSelect.value === "-1") {
-        generateRandomGraph();
+        generateRandomGraph(parseInt(numVerticesInput.value, 10));
     } else {
         loadChallenge(parseInt(challengeSelect.value));
     }
