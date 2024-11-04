@@ -20,32 +20,7 @@ let selectedColor = null;
 const colors = ['#FFA726', '#66BB6A', '#42A5F5', '#AB47BC', '#EC407A', '#8D6E63'];
 
 const challenges = [
-    // Challenge 1: Small, Simple Graph (5 vertices)
-    {
-        vertices: [
-            {x: 300, y: 100}, {x: 450, y: 200}, {x: 400, y: 350},
-            {x: 200, y: 350}, {x: 150, y: 200}
-        ],
-        edges: [[0,1],[0,2],[0,3],[0,4],[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
-    },
-    // Challenge 2: Pentagon with Inner Star (6 vertices)
-    {
-        vertices: [
-            {x: 300, y: 50}, {x: 450, y: 150}, {x: 400, y: 350},
-            {x: 200, y: 350}, {x: 150, y: 150}, {x: 300, y: 200}
-        ],
-        edges: [[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,5],[2,5],[3,5],[4,5]]
-    },
-    // Challenge 3: Hexagonal Graph with Additional Edges (6 vertices)
-    {
-        vertices: [
-            {x: 200, y: 200}, {x: 400, y: 200},
-            {x: 150, y: 300}, {x: 450, y: 300},
-            {x: 300, y: 100}, {x: 300, y: 400}
-        ],
-        edges: [[0,1],[0,2],[0,3],[0,4],[0,5],[1,2],[1,3],[1,4],[1,5],[2,3],[2,4],[2,5],[3,4],[3,5],[4,5]]
-    },
-    // Challenge 4: Small Triangle-Based Graph (5 vertices)
+    // Challenge 1: Small Triangle-Based Graph (5 vertices) - Original #4
     {
         vertices: [
             {x: 200, y: 100}, {x: 400, y: 100},
@@ -53,7 +28,15 @@ const challenges = [
         ],
         edges: [[0,1],[0,2],[0,3],[1,3],[1,4],[2,3],[3,4]]
     },
-    // Challenge 5: Medium Graph with Overlapping Edges (8 vertices)
+    // Challenge 2: Pentagon with Inner Star (6 vertices) - Original #2
+    {
+        vertices: [
+            {x: 300, y: 50}, {x: 450, y: 150}, {x: 400, y: 350},
+            {x: 200, y: 350}, {x: 150, y: 150}, {x: 300, y: 200}
+        ],
+        edges: [[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,5],[2,5],[3,5],[4,5]]
+    },
+    // Challenge 3: Medium Graph with Overlapping Edges (8 vertices) - Original #5
     {
         vertices: [
             {x: 200, y: 100}, {x: 400, y: 100}, {x: 200, y: 300}, {x: 400, y: 300},
@@ -61,7 +44,15 @@ const challenges = [
         ],
         edges: [[0,1],[0,2],[0,4],[1,3],[1,5],[2,3],[2,6],[3,7],[4,5],[4,6],[5,7],[6,7]]
     },
-    // Challenge 6: Large, Complex Graph (10 vertices with cross-connections)
+    // Challenge 4: Small, Simple Graph (5 vertices) - Original #1
+    {
+        vertices: [
+            {x: 300, y: 100}, {x: 450, y: 200}, {x: 400, y: 350},
+            {x: 200, y: 350}, {x: 150, y: 200}
+        ],
+        edges: [[0,1],[0,2],[0,3],[0,4],[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
+    },
+    // Challenge 5: Large, Complex Graph (10 vertices) - Original #6
     {
         vertices: [
             {x: 300, y: 50}, {x: 450, y: 150}, {x: 400, y: 350},
@@ -70,7 +61,7 @@ const challenges = [
         ],
         edges: [[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,6],[2,7],[3,8],[4,9],[5,7],[7,9],[9,6],[6,8],[8,5]]
     },
-    // Challenge 7: Circular Graph with 20 vertices and additional cross-connections
+    // Challenge 6: Circular Graph (20 vertices) - Original #7
     {
         vertices: Array(20).fill().map((_, i) => ({
             x: 300 + 200 * Math.cos(2 * Math.PI * i / 20),
@@ -81,6 +72,15 @@ const challenges = [
             [10,11],[11,12],[12,13],[13,14],[14,15],[15,16],[16,17],[17,18],[18,19],[19,0],
             [0,5],[1,6],[2,7],[3,8],[4,9],[10,15],[11,16],[12,17],[13,18],[14,19]
         ]
+    },
+    // Challenge 7: Hexagonal Graph (6 vertices) - Original #3
+    {
+        vertices: [
+            {x: 200, y: 200}, {x: 400, y: 200},
+            {x: 150, y: 300}, {x: 450, y: 300},
+            {x: 300, y: 100}, {x: 300, y: 400}
+        ],
+        edges: [[0,1],[0,2],[0,3],[0,4],[0,5],[1,2],[1,3],[1,4],[1,5],[2,3],[2,4],[2,5],[3,4],[3,5],[4,5]]
     }
 ];
 
