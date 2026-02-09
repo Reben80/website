@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Costas Array Game — Rebin Muhammad</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="costas-style.css">
+</head>
+<body class="game-page">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="site-title"><a href="index.html">Rebin Muhammad</a></h1>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li class="dropdown">
+            <a href="#">About</a>
+            <ul class="dropdown-content">
+              <li><a href="index.html">Academic Portfolio</a></li>
+              <li><a href="cv.html">Curriculum Vitae (CV)</a></li>
+              <li><a href="teaching_philosophy.html">Teaching Philosophy</a></li>
+              <li><a href="publications.html">Publications</a></li>
+              <li><a href="https://github.com/Reben80" target="_blank" rel="noopener">Repositories</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Projects &amp; Outreach</a>
+            <ul class="dropdown-content">
+              <li><a href="costas-array-game.html">Mathematical Game</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Resources</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Teaching Resources</a></li>
+              <li><a href="#">Recommended Readings</a></li>
+            </ul>
+          </li>
+          <li><a href="mailto:reben80@gmail.com">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <h2 class="page-title">Costas Array Game</h2>
+      <div class="content-card costas-game">
+        <button type="button" id="descriptionButton" class="costas-desc-btn">How to Play</button>
+        <div id="description" class="costas-desc">
+          Place dots on the grid so that no two dots lie on the same row or column, and no two vectors between dots have the same slope and magnitude (length). Select different grid sizes for varied challenges.
+        </div>
+        <div class="costas-container">
+          <div id="grid" class="costas-grid"></div>
+        </div>
+        <div class="costas-controls">
+          <div class="costas-score">Score: <span id="scoreValue">0</span></div>
+          <div class="costas-size">
+            <label for="gridSizeSelect">Grid size:</label>
+            <select id="gridSizeSelect" aria-label="Grid size">
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <span id="gridSizeLabel" aria-hidden="true">5</span>
+          </div>
+          <button type="button" id="resetButton" class="costas-btn">Reset</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="mailto:reben80@gmail.com">Contact me at: reben80@gmail.com</a></p>
+    <p>© 2025 Rebin Muhammad. All rights reserved.</p>
+  </footer>
+
+  <script src="costas-script.js"></script>
+  <script>
+    document.getElementById('gridSizeSelect').addEventListener('change', function() {
+      if (typeof updateGridSize === 'function') updateGridSize();
+    });
+    document.getElementById('resetButton').addEventListener('click', function() {
+      if (typeof resetGame === 'function') resetGame();
+    });
+  </script>
+</body>
+</html>

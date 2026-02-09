@@ -1,0 +1,110 @@
+/* Costas Array Game — scoped to .costas-game, matches site theme */
+
+.costas-game {
+  padding: 1.5rem;
+}
+
+.costas-desc-btn {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-primary, #1a365d);
+  color: white;
+  border: none;
+  border-radius: var(--radius, 8px);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.costas-desc-btn:hover {
+  background: var(--color-primary-light, #2c5282);
+}
+
+.costas-desc {
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg, #f7f8fa);
+  border-radius: var(--radius, 8px);
+  font-size: 0.95rem;
+  color: var(--color-text-muted, #718096);
+}
+
+.costas-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.costas-grid {
+  display: grid;
+  grid-gap: 4px;
+  padding: 8px;
+  background: var(--color-border, #e2e8f0);
+  border-radius: var(--radius, 8px);
+}
+
+.costas-grid .cell {
+  width: 60px;
+  height: 60px;
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.costas-grid .cell:hover {
+  background: #edf2f7;
+}
+.costas-grid .cell.active {
+  background: var(--color-primary, #1a365d);
+}
+.costas-grid .cell.error {
+  background: #c53030;
+}
+
+.costas-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.costas-score {
+  font-weight: 600;
+  color: var(--color-primary, #1a365d);
+}
+.costas-size {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.costas-size label { font-size: 0.9rem; }
+.costas-size select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: var(--radius, 8px);
+  font-size: 0.95rem;
+  background: var(--color-surface, #fff);
+}
+.costas-btn {
+  padding: 0.5rem 1rem;
+  background: var(--color-primary, #1a365d);
+  color: white;
+  border: none;
+  border-radius: var(--radius, 8px);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.costas-btn:hover {
+  background: var(--color-primary-light, #2c5282);
+}
+
+@media (max-width: 500px) {
+  .costas-grid .cell {
+    width: 40px;
+    height: 40px;
+  }
+}
