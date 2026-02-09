@@ -1,0 +1,106 @@
+/* Menu styles */
+header, footer {
+    background-color: #2E3D48; /* Dark blue background */
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+    position: relative; /* Ensure dropdowns are positioned relative to these items */
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #FFD700; /* Gold color for hover */
+    text-decoration: none;
+}
+
+/* Dropdown menu styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0; /* Align to the left of the parent item */
+    top: 100%; /* Position below the parent item */
+    background-color: black; /* Black background for dropdown items */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: white; /* White text color for better visibility */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #FFD700; /* Yellow background on hover */
+    color: black; /* Optional: Change text color on hover */
+}
+
+/* Additional styles specific to the publications section */
+main#publications {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+main#publications h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+main#publications ul {
+    list-style: none;
+    padding: 0;
+}
+
+main#publications li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+main#publications a {
+    color: #007bff; /* Standard link color */
+    text-decoration: none;
+}
+
+main#publications a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2E3D48;
+    color: white;
+    border-radius: 5px;
+}

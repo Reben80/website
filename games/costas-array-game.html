@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Costas Array Game</title>
+    <link rel="stylesheet" type="text/css" href="costas-style.css">
+</head>
+<body>
+
+<div id="title">Costas Array Game</div>
+
+<button id="descriptionButton">How to Play</button>
+<div id="description" style="display: none;">
+    <p> Place dots on the grid so that no two dots form a horizontal or vertical line. And there are no two vectors that have same slopes and magnatuide (length) Select different grid sizes for varied challenges.</p>
+</div>
+
+<div class="container">
+    <div id="grid"></div>
+</div>
+
+<div class="bottom-container">
+    <div id="score">Score: <span id="scoreValue">0</span></div>
+    <div class="grid-size-selector">
+        <label for="gridSizeSelect">Grid Size:</label>
+        <select id="gridSizeSelect" onchange="updateGridSize()">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5" selected>5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+    </div>
+    <button onclick="resetGame()">Reset</button>
+</div>
+
+<script src="costas-script.js"></script>
+</body>
+</html>

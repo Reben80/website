@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Three Dots</title>
+    <link rel="stylesheet" href="no-three-in-a-row.css">
+    <link href="https://fonts.googleapis.com/css2?family=Clear+Sans:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div id="game-wrapper">
+        <div class="game-header">
+            <h1 class="game-title">No Three Dots</h1>
+            <button id="instructions-btn">How to Play</button>
+        </div>
+        <div id="game-container">
+            <div id="grid"></div>
+            <div id="controls">
+                <button id="reset-btn">Start Over</button>
+                <p>Dots placed: <span id="dot-count">0</span> / <span id="max-dots">0</span></p>
+                <label for="difficulty">Choose your challenge:</label>
+                <select id="difficulty">
+                    <option value="1">1x1</option>
+                    <option value="2">2x2</option>
+                    <option value="3">3x3</option>
+                    <option value="4">4x4</option>
+                    <option value="5" selected>5x5</option>
+                    <option value="6">6x6</option>
+                    <option value="7">7x7</option>
+                    <option value="8">8x8</option>
+                    <option value="9">9x9</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="instructions-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>How to Play</h2>
+            <ol>
+                <li>Click on empty cells to place dots.</li>
+                <li>Try to place as many dots as possible without forming a line of three dots (horizontally, vertically, or diagonally).</li>
+                <li>The game ends when you can't place any more dots without forming a line of three.</li>
+                <li>Challenge yourself with different grid sizes!</li>
+            </ol>
+            <p>Remember: No three dots in a row, column, or diagonal!</p>
+        </div>
+    </div>
+    <script src="no-three-in-a-row.js"></script>
+</body>
+</html>

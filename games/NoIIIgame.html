@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can You Guess My Rule?</title>
+    <link rel="stylesheet" href="NoIIIgame_styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="challenge-message">What's the Secret Rule? Try Placing as Many Dots as Possible!</div>
+        <div id="message"></div>
+        <div id="counter">Dots Placed: 0</div>
+        <div id="grid"></div>
+        <div id="controls">
+            <label for="grid-size">Grid Size:</label>
+            <select id="grid-size">
+                <option value="3">3x3</option>
+                <option value="4">4x4</option>
+                <option value="5">5x5</option>
+                <option value="6">6x6</option>
+                <option value="7">7x7</option>
+            </select>
+            <button id="reset-button">Reset</button>
+        </div>
+    </div>
+    <script src="NoIIIgame_script.js"></script>
+</body>
+</html>
