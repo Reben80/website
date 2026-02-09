@@ -1,179 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Games</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        .container {
-            max-width: 1200px; /* Adjusted width for larger screens */
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Grid styles */
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Three games per row */
-            gap: 20px; /* Space between grid items */
-            padding: 20px;
-        }
-
-        .game {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .game img {
-            width: 100%; /* Ensure the image takes the full width */
-            height: auto; /* Maintain aspect ratio */
-            max-width: 250px; /* Optional: Set a max width for large screens */
-            border-radius: 5px;
-        }
-
-        .game:hover {
-            transform: translateY(-5px);
-        }
-
-        .game h2 {
-            font-size: 20px;
-            margin-top: 10px;
-        }
-
-        .game p {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .games-grid {
-                grid-template-columns: repeat(2, 1fr); /* Two games per row for smaller screens */
-            }
-        }
-
-        @media (max-width: 500px) {
-            .games-grid {
-                grid-template-columns: 1fr; /* One game per row for mobile */
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mathematical Games — Rebin Muhammad</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 0;
+    }
+    .game-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .game-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .game-card img {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+    }
+    .game-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+      color: var(--color-primary);
+    }
+    .game-card p {
+      margin: 0 0 0.75rem;
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      text-align: center;
+      flex: 1;
+    }
+    .game-card a.btn-play {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: var(--color-primary);
+      color: white;
+      text-decoration: none;
+      border-radius: var(--radius);
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .game-card a.btn-play:hover {
+      background: var(--color-primary-light);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Math Games</h1>
-    </header>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-    <div class="container">
-        <div class="games-grid">
-            <div class="game">
-                <h2>Dot in The Box: Can You Guess My Rule?</h2>
-                <p>A mathematical game related to dots on a grid.</p>
-                <p><a href="https://reben80.github.io/DOTintBoxMax/">Play</a></p>
-                <img src="screenshot_dotintboxmax.jpg" alt="Screenshot of DOTintBoxMax" class="screenshot">
-            </div>
-
-            <div class="game">
-                <h2>Dot in the Box: Human vs. AI— Who is the Winner?</h2>
-                <p>A challenging puzzle game involving dots and boxes.</p>
-                <p><a href="https://reben80.github.io/DotsInBox/">Play</a></p>
-                <img src="screenshot_dotsinbox.jpg" alt="Screenshot of DotsInBox" class="screenshot">
-            </div>
-
-            <div class="game">
-                <h2>Slope Battles Single Player</h2>
-                <p>A math-inspired strategy game with slopes and battles.</p>
-                <p><a href="https://reben80.github.io/SlopeBattles/">Play</a></p>
-                <img src="screenshot_slopebattles.jpg" alt="Screenshot of Slope Battles Single Player" class="screenshot">
-            </div>
-
-            <div class="game">
-                <h2>Equadots</h2>
-                <p>You try to place as many dots on the grid with the condition of no repeated distances.</p>
-                <p><a href="https://reben80.github.io/Dquadots/">Play Equadots</a></p>
-                <img src="equadots.JPG" alt="Screenshot of Equadots" class="screenshot">
-            </div>
-
-            <div class="game">
-                <h2>Costas Array Game</h2>
-                <p>A new challenging puzzle based on the unique properties of Costas Arrays.</p>
-                <p><a href="costas-array-game.html">Play Costas Array Game</a></p>
-                <img src="costasarray.jpg" alt="Screenshot of Costas Array Game" class="screenshot">
-            </div>
-
-            <div class="game">
-                <h2>Vector Addition</h2>
-                <p>You try to guess the location of the addition of two vectors.</p>
-                <p><a href="vector_addition.html">Play</a></p>
-                <img src="vector_addition.png" alt="Screenshot of Vector Addition" class="screenshot">
-            </div>
-
-            <div class="game">
-                <h2>Cosine Similarity</h2>
-                <p>You try to guess how similar two vectors are by finding cosine similarity.</p>
-                <p><a href="cosine_similarity.html">Play</a></p>
-                <img src="cosine_similarty.png" alt="Screenshot of Cosine Similarity" class="screenshot">
-            </div>
-
-            <div class="game">
-                <h2>Centroid of Triangle</h2>
-                <p>You try to guess the centroid of a triangle.</p>
-                <p><a href="centroid-finder-game.html">Play</a></p>
-                <img src="centroid_of_triangle.JPG" alt="Screenshot of Centroid of Triangle" class="screenshot">
-            </div>
-
-            <div class="game">
-                <h2>Dot in The Grid: Can You Guess My Rule?</h2>
-                <p>Try to place as many dots and find the rule.</p>
-                <p><a href="NoIIIgame.html">Play</a></p>
-                <img src="NoIIIgame.jpeg" alt="Screenshot of Dot in The Grid" class="screenshot">
-            </div>
-
-            <div class="game">
-                <h2>No Three in Line</h2>
-                <p>Try to place as many dots that no three dots are in the same line</p>
-                <p><a href="no-three-in-a-row.html">Play</a></p>
-                <img src="no-three-in-a-row.jpeg" alt="Screenshot of No Three in Line" class="screenshot">
-            </div>
-
-            <div class="game">
-                <h2>Coloring Vertices</h2>
-                <p>Your goal is to color vertices with as few colors as possible.</p>
-                <p><a href="graph-coloring.html">Play</a></p>
-                <img src="graph-coloring.jpeg" alt="Screenshot of Coloring Vertices" class="screenshot">
-            </div>
-
-            <div class="game">
-                <h2>Traveling Salesman Problem</h2>
-                <p>Your goal is to find the shortest path that visits all vertices exactly once.</p>
-                <p><a href="https://traveling-salesman-game.vercel.app" target="_blank">Play</a></p>
-                <img src="TSP.png" alt="Screenshot of Traveling Salesman Problem Game" class="screenshot">
-            </div>
-        </div>
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="site-title"><a href="../index.html">Rebin Muhammad</a></h1>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li class="dropdown">
+            <a href="#">About</a>
+            <ul class="dropdown-content">
+              <li><a href="../index.html">Academic Portfolio</a></li>
+              <li><a href="../cv.html">Curriculum Vitae (CV)</a></li>
+              <li><a href="../teaching_philosophy.html">Teaching Philosophy</a></li>
+              <li><a href="../publications.html">Publications</a></li>
+              <li><a href="https://github.com/Reben80" target="_blank" rel="noopener">Repositories</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Projects &amp; Outreach</a>
+            <ul class="dropdown-content">
+              <li><a href="index.html">Mathematical Games</a></li>
+              <li><a href="../costas-array-game.html">Costas Array Game</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Resources</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Teaching Resources</a></li>
+              <li><a href="#">Recommended Readings</a></li>
+            </ul>
+          </li>
+          <li><a href="mailto:reben80@gmail.com">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <h2 class="page-title">Mathematical Games</h2>
+      <p class="content-card" style="margin-bottom: 1.5rem;">Interactive math games for learning and exploration. Click any game to play.</p>
+      <div class="games-grid">
+        <div class="game-card">
+          <img src="screenshot_dotintboxmax.jpg" alt="DOTintBoxMax">
+          <h3>Dot in The Box: Can You Guess My Rule?</h3>
+          <p>A mathematical game related to dots on a grid.</p>
+          <a href="https://reben80.github.io/DOTintBoxMax/" class="btn-play" target="_blank" rel="noopener">Play</a>
+        </div>
+        <div class="game-card">
+          <img src="screenshot_dotsinbox.jpg" alt="DotsInBox">
+          <h3>Dot in the Box: Human vs. AI—Who is the Winner?</h3>
+          <p>A challenging puzzle game involving dots and boxes.</p>
+          <a href="https://reben80.github.io/DotsInBox/" class="btn-play" target="_blank" rel="noopener">Play</a>
+        </div>
+        <div class="game-card">
+          <img src="screenshot_slopebattles.jpg" alt="Slope Battles">
+          <h3>Slope Battles Single Player</h3>
+          <p>A math-inspired strategy game with slopes and battles.</p>
+          <a href="https://reben80.github.io/SlopeBattles/" class="btn-play" target="_blank" rel="noopener">Play</a>
+        </div>
+        <div class="game-card">
+          <img src="equadots.JPG" alt="Equadots">
+          <h3>Equadots</h3>
+          <p>Place as many dots on the grid with no repeated distances.</p>
+          <a href="https://reben80.github.io/Dquadots/" class="btn-play" target="_blank" rel="noopener">Play Equadots</a>
+        </div>
+        <div class="game-card">
+          <img src="costasarray.jpg" alt="Costas Array Game">
+          <h3>Costas Array Game</h3>
+          <p>A puzzle based on the unique properties of Costas Arrays.</p>
+          <a href="costas-array-game.html" class="btn-play">Play</a>
+        </div>
+        <div class="game-card">
+          <img src="vector_addition.png" alt="Vector Addition">
+          <h3>Vector Addition</h3>
+          <p>Guess the location of the sum of two vectors.</p>
+          <a href="vector_addition.html" class="btn-play">Play</a>
+        </div>
+        <div class="game-card">
+          <img src="cosine_similarty.png" alt="Cosine Similarity">
+          <h3>Cosine Similarity</h3>
+          <p>Guess how similar two vectors are using cosine similarity.</p>
+          <a href="cosine_similarity.html" class="btn-play">Play</a>
+        </div>
+        <div class="game-card">
+          <img src="centroid_of_triangle.JPG" alt="Centroid of Triangle">
+          <h3>Centroid of Triangle</h3>
+          <p>Guess the centroid of a triangle.</p>
+          <a href="centroid-finder-game.html" class="btn-play">Play</a>
+        </div>
+        <div class="game-card">
+          <img src="NoIIIgame.jpeg" alt="Dot in The Grid">
+          <h3>Dot in The Grid: Can You Guess My Rule?</h3>
+          <p>Place as many dots and find the rule.</p>
+          <a href="NoIIIgame.html" class="btn-play">Play</a>
+        </div>
+        <div class="game-card">
+          <img src="no-three-in-a-row.jpeg" alt="No Three in Line">
+          <h3>No Three in Line</h3>
+          <p>Place as many dots so that no three are on the same line.</p>
+          <a href="no-three-in-a-row.html" class="btn-play">Play</a>
+        </div>
+        <div class="game-card">
+          <img src="graph-coloring.jpeg" alt="Coloring Vertices">
+          <h3>Coloring Vertices</h3>
+          <p>Color vertices with as few colors as possible.</p>
+          <a href="graph-coloring.html" class="btn-play">Play</a>
+        </div>
+        <div class="game-card">
+          <img src="TSP.png" alt="Traveling Salesman Problem">
+          <h3>Traveling Salesman Problem</h3>
+          <p>Find the shortest path that visits all vertices exactly once.</p>
+          <a href="https://traveling-salesman-game.vercel.app" class="btn-play" target="_blank" rel="noopener">Play</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="mailto:reben80@gmail.com">Contact me at: reben80@gmail.com</a></p>
+    <p>© 2025 Rebin Muhammad. All rights reserved.</p>
+  </footer>
 </body>
 </html>
