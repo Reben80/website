@@ -218,6 +218,47 @@ main .wrap {
 }
 .content-card h2:first-child { margin-top: 0; }
 
+/* --- Teaching philosophy page --- */
+.philosophy-intro {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.philosophy-section {
+  margin-bottom: 2rem;
+}
+.philosophy-section:last-of-type { margin-bottom: 0; }
+.philosophy-section h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.philosophy-section h3::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 1.2em;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+.philosophy-section p {
+  margin: 0 0 0.75rem;
+  text-align: justify;
+}
+.philosophy-section p:last-child { margin-bottom: 0; }
+.philosophy-download {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
 /* --- Publications list --- */
 .publications-list {
   list-style: none;
